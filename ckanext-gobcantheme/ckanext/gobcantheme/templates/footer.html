@@ -1,0 +1,86 @@
+<footer class="site-footer">
+	<div class="container">
+		{% block footer_content %}
+		<div class="upper-footer">
+			<div class="row">
+				{% block footer_nav %}
+
+					<div class="col-md-3 footer-links footer-column">
+						<img src="/catalogos/general/canarias-avanza-con-europa-1-300x100.png" alt="Canarias avanza con Europa" title="Canarias avanza con Europa" />
+					</div>
+
+					<div class="col-md-3 footer-links footer-column">
+
+						<p class="footer-title">Contacto</p>
+						<ul class="unstyled">
+							<li>
+								<a title="Datos de contacto" href="/portal/formulario-de-contacto/">Datos de contacto</a>
+							</li>
+							<li>
+								<a title="Sugerencias y reclamaciones" href="https://www.gobiernodecanarias.org/principal/sugrec/">Sugerencias y reclamaciones</a>
+							</li>
+						</ul>
+
+					</div>
+
+					<div class="col-md-3 footer-links footer-column">
+
+						<p class="footer-title">Políticas</p>
+						<ul class="unstyled">
+							<li>
+								<a title="Aviso legal y Condiciones de uso" href="/portal/aviso-legal-y-condiciones-de-uso/">Aviso legal y Condiciones de uso</a>
+							</li>
+							<li>
+								<a title="Políticas de privacidad y de cookies" href="/portal/politica-privacidad/">Políticas de privacidad y de cookies</a>
+							</li>
+							<li>
+								<a title="Política de accesibilidad" href="/portal/politica-de-accesibilidad/">Políticas de accesibilidad</a>
+							</li>
+							<li>
+								<a title="Mapa del sitio" href="/portal/mapa-del-sitio/">Mapa del sitio</a>
+							</li>
+						</ul>
+
+					</div>
+
+					<div class="col-md-3 footer-links footer-column">
+						<p class="footer-title">Redes sociales </p>
+						<ul class="unstyled">
+							<li class="footer-title rss">
+								<a class="facebook" href="https://www.facebook.com/OpenGobCan" target="_blank">
+								<i class="fa fa-facebook"></i></a>
+							</li>
+							<li class="footer-title rss">
+								<a class="twitter" href="https://twitter.com/Open_Gobcan" target="_blank">
+								<i class="fa fa-twitter"></i></a>
+							</li>
+							<li class="footer-title rss">
+								<a class="youtube" href="https://www.youtube.com/channel/UCZFgkpE3Vhku7QuflF_zBzg" target="_blank">
+								<i class="fa fa-youtube-play"></i></a>
+							</li>
+						</ul>
+
+					</div>
+				{% endblock %}
+
+			</div>
+		</div>
+		{% endblock %}
+	</div>
+	<div class="lower-footer">
+		<div class="container">
+			{% block footer_attribution %}
+					<p class="attrib fleft footer-column">
+						<strong>© Gobierno de Canarias</strong>
+					</p>
+			{% endblock %}
+		</div>
+	</div>
+	{% block footer_debug %}
+		{% if g.debug %}
+			{% include 'snippets/debug.html' %}
+		{% endif %}
+	{% endblock %}
+</footer>
+
+

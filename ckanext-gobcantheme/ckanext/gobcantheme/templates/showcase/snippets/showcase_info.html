@@ -1,0 +1,29 @@
+{#
+Displays a sidebard module with information for given package
+
+pkg    - The showcase package dict that owns the resources.
+
+Example:
+
+{% snippet "package/snippets/info.html", pkg=pkg %}
+
+#}
+{% block package_info %}
+    {% if pkg %}
+        <section class="module module-narrow">
+            <h3 class="module-heading"><i class="fa fa-sitemap"></i> {{ _('Datasets in Showcase') }}</h2>
+                {% if showcase_pkgs %}
+                    <ul class="nav nav-simple">
+                        {% for package in showcase_pkgs | sort(attribute='title') %}
+                            {% set truncate_title = truncate_title or 80 %}
+                            {% set counter= loop.index0 + 1  %}
+                            {% set title = counter ~ ". " ~ package.title or package.name %}
+                            <li class="nav-item">{{ h.link_to(title, h.url_for(controller='dataset' if h.ckan_version().split('.')[1] | int >= 9 else 'package', action='read', id=package.name)) }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="module-content empty">{{_('There are no Datasets in this Showcase')}}</p>
+                {% endif %}
+        </section>
+    {% endif %}
+{% endblock %}

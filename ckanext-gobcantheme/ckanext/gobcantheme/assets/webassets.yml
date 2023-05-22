@@ -1,0 +1,17 @@
+gobcantheme_css:
+  output: ckanext-gobcantheme/%(version)s_gobcantheme_css.css
+  contents: 
+    - styles/custom.css
+    - styles/logos-nuevos.css
+    - styles/subject-area-icons.css
+    - styles/insuit.css
+    - styles/readspeak.css
+
+gobcantheme_fonts:
+  output: ckanext-gobcantheme/%(version)s_gobcantheme_fonts.css
+  filters: cssrewrite
+  contents:
+    - fonts/open-sans/css/open-sans.css
+    - fonts/roboto/css/roboto.css
+    - fonts/roboto-condensed/css/roboto-condensed.css
+

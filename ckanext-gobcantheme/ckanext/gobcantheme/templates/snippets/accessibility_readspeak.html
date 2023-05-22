@@ -1,0 +1,40 @@
+{#
+Displays the accessibility ReadSpeaker plugin option
+
+This snippet adds the next HTML code as a button:
+
+    <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
+            <a rel="nofollow" 
+                class="rsbtn_play" 
+                accesskey="L" 
+                title="Escucha esta p&aacute;gina utilizando ReadSpeaker webReader" 
+                href="https://app-eu.readspeaker.com/cgi-bin/rsent?customerid=7294&amp;lang=es_es&amp;readid=[READID]&amp;url=[ENCODED_URL]">
+                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>Escuchar</span></span></span>
+                <span class="rsbtn_right rsimg rsplay rspart"></span>
+            </a>
+    </div>
+
+Modify [READID] (do not include the brackets) to the ID attribute of the element containing the content that is to be read. 
+Modify [ENCODED_URL] (do not include the brackets) to the encoded URL of the page that should be read.
+
+You choose which section of your website and mobile website to read aloud by using the ID of that element as the value of the parameter "&readid" in the query string of the ReadSpeaker call.
+
+Example: To read the DIV with id="maincontent", use &readid=maincontent
+
+If you would rather read a class than an id, you can replace "readid" with "readclass".
+
+Example: To read the DIV with class="maincontent", use &readclass=maincontent
+
+#}
+{% block package_info %}
+    <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
+        <a rel="nofollow" 
+            class="rsbtn_play" 
+            accesskey="L" 
+            title="Escucha esta p&aacute;gina utilizando ReadSpeaker webReader" 
+            href="https://app-eu.readspeaker.com/cgi-bin/rsent?customerid=7294&amp;lang=es_es&amp;readid=content&amp;url={% block current_url %}{{  h.url_for(request.path, _external=True) }}{% endblock %}">
+            <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>Escuchar</span></span></span>
+            <span class="rsbtn_right rsimg rsplay rspart"></span>
+        </a>
+    </div>
+{% endblock %}

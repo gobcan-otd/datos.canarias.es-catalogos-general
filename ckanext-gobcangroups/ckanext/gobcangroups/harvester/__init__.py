@@ -1,0 +1,1 @@
+from ckanext.gobcangroups.harvester.gobcanharvester import GOBCANHarvester

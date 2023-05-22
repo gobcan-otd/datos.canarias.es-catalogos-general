@@ -1,0 +1,222 @@
+.subject-area-icon {
+    text-align: center;
+    display: block;
+    justify-background: center;
+}
+.subject-area-icon.group-home-icon{
+    font-size: 75px !important;
+}
+
+
+/* .icon-<CATEGORY_KEY> => CATEGORY_KEY corresponds 'key' of 'category' in 'categories' array in application-env.yml */
+
+.sector-publico:before {
+        background: url('/catalogos/general/sector-publico.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;
+}
+.ciencia-y-tecnologia:before {
+        background: url('/catalogos/general/ciencia-tecnologia.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.icon-Demo_MovimientoNatural:before {background: '\0051'}
+.icon-Demo_MovimientosMigratorios:before {background: '\0052'}
+.demografia:before {
+        background: url('/catalogos/general/demografia.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.hacienda:before {
+        background: url('/catalogos/general/hacienda.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.urbanismo-infraestructuras:before {
+        background: url('/catalogos/general/urbanismo-infraestructura.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.icon-Economia_Precios_ConsumoEInversion:before {background: '\0045'}
+.empleo:before {
+        background: url('/catalogos/general/empleo.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.medio-rural:before {
+        background: url('/catalogos/general/medio-rural.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.vivienda:before {
+        background: url('/catalogos/general/vivienda.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.energia:before {
+        background: url('/catalogos/general/energia.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.industria:before {
+        background: url('/catalogos/general/industria.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.comercio:before {
+        background: url('/catalogos/general/comercio.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.deporte:before {
+        background: url('/catalogos/general/deportes.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.turismo:before {
+        background: url('/catalogos/general/turismo.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.economia:before {
+        background: url('/catalogos/general/economia.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.transporte:before {
+        background: url('/catalogos/general/transporte.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.sociedad-bienestar:before {
+        background: url('/catalogos/general/sociedad-bienestar.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.cultura-ocio:before {
+        background: url('/catalogos/general/cultura-ocio.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.educacion:before {
+        background: url('/catalogos/general/educacion.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.icon-Sociedad_EleccionesYParticipacionCiudadana:before {background: '\004b'}
+.legislacion-justicia:before {
+        background: url('/catalogos/general/legislacion-justicia.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.seguridad:before {
+        background: url('/catalogos/general/seguridad.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.salud:before {
+        background: url('/catalogos/general/salud.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.medio-ambiente:before
+{
+        background: url('/catalogos/general/medio-ambiente.png');
+	content: '';
+	background-size: 94px 94px;
+	background-repeat: no-repeat;
+        width: 94px;
+	height: 94px;
+        display: inline-flex;}
+.:before {background: '\0056'}
+
+
+@media only screen and (width: 1200px) {
+    .subject-area-icon {
+        font-size: 8vw;
+    }
+}
+@media only screen and (width: 992px) {
+    
+    .subject-area-icon {
+        font-size: 12vw;
+    }
+}
+
+@media only screen and (width: 768px) {
+    .subject-area-icon {
+        font-size: 15vw;
+    }
+}
+
+@media only screen and (width: 576px) {
+    .subject-area-icon {
+        font-size: 26vw;
+    }
+}
+
+

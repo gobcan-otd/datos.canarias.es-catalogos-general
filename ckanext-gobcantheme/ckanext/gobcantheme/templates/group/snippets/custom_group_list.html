@@ -1,0 +1,19 @@
+{#
+Display a grid of group items.
+
+groups - A list of groups.
+
+Example:
+
+    {% snippet "group/snippets/custom_group_list.html" %}
+
+#}
+{% block group_list %}
+<ul class="media-grid" data-module="media-grid">
+  {% block group_list_inner %}
+    {% for group in h.gobcan_theme_get_all_groups() %}
+      {% snippet "group/snippets/group_item.html", group=group, position=loop.index %}
+    {% endfor %}
+  {% endblock %}
+</ul>
+{% endblock %}

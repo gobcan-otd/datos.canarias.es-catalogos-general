@@ -1,0 +1,23 @@
+{% ckan_extends %}
+
+{%- block styles %}
+   {{ super() }}
+   {% asset 'ckanext-gobcantheme/gobcantheme_css' %}
+{% endblock %}
+
+{% set insuit_url = h.gobcan_theme_accessibility_insuit_url() %}
+{% set readspeaker_url = h.gobcan_theme_accessibility_readspeak_url() %}
+
+{% block scripts %}
+
+   {{ super() }}  
+   {% if insuit_url %}
+      <script async="async" type="text/javascript" src="{% block insuit_url %}{{ insuit_url }}{% endblock %}"></script>
+   {% endif %}
+      
+   {% if readspeaker_url %}
+      {# <script src="https://cdn-eu.readspeaker.com/script/7294/webReader/webReader.js?pids=wr" type="text/javascript" id="rs_req_Init"></script> #}
+      <script src="{% block rs_url %}{{ readspeaker_url }}{% endblock %}" type="text/javascript" id="rs_req_Init"></script>
+   {% endif %}
+
+{% endblock %}

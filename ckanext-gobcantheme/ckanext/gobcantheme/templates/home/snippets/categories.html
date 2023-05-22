@@ -1,0 +1,31 @@
+  {% block groups_list %}
+  {% set groups = h.istac_theme_get_all_groups() %}
+    {% if groups %}
+      {% snippet "home/snippets/groups_list.html", groups=groups %}
+    {% else %}
+
+      <p class="empty">
+	{{ groups }}
+        {{ _('There are currently no groups for this site') }}.
+        {% if h.check_access('group_create') %}
+          {% link_for _('How about creating one?'), controller='group', action='new' %}</a>.
+        {% endif %}
+      </p>
+    {% endif %}
+  {% endblock %}
+
+  {% block search_title %}
+  {% set count = h.istac_theme_get_count_all_datasets() %}
+    <div class="counter-box">
+     <div class="box">
+      <div class="media-grid count-all-datasets">
+      {% if count %}
+        <h1>{{ h.localised_number(count) +' ' + _('Datasets') }}</h1>
+      {% else %}
+        <h1> {{ _('No datasets found')  }} </h1>
+      {% endif %}
+      </div>
+     </div>
+    </div>
+  {% endblock %}
+

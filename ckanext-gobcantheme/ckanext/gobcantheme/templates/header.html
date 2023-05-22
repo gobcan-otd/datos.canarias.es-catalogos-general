@@ -1,0 +1,149 @@
+{% block header_wrapper %}
+{% block header_account %}
+  
+{% endblock %}
+<header class="navbar navbar-static-top masthead">
+  {% block header_debug %}
+    {% if g.debug and not g.debug_supress_header %}
+      <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
+    {% endif %}
+  {% endblock %}
+  <div class="container">
+    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+      <span class="fa fa-bars"></span>
+    </button>
+    {# The .header-image class hides the main text and uses image replacement for the title #}
+    <hgroup class="{{ g.header_class }} pull-left">
+
+      {% block header_logo %}
+        {% if g.site_logo %}
+          <a class="logo" href="/portal"><img src="/catalogos/general/nuevo-logo-canarias-datos-abiertos.png" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+        {% else %}
+          <h1>
+            <a href="{{ h.url_for('home') }}">{{ g.site_title }}</a>
+          </h1>
+          {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+        {% endif %}
+      {% endblock %}
+
+    </hgroup>
+
+    <div class="navbar-collapse collapse">
+      {% block header_site_navigation %}
+        <nav class="section navigation">
+          <ul class="nav nav-pills">
+            <ul  class="nav navbar-nav"><li class = ""><a title="Datos" href="/portal/datos/">Datos</a></li>
+              <li  class="nav"><a title="Reutilización" href="/portal/reutilizacion/">Reutilización</a>
+                <ul class=" dropdown-menu">
+                  <li  class = ""><a title="Fuente abierta y metadatos" href="/portal/reutilizacion/fuente-abierta-y-metadatos/">Fuente abierta y metadatos</a></li>
+                  <li  class = ""><a title="API" href="/portal/reutilizacion/catalogos/">Catálogos</a></li>
+                  <li  class = ""><a title="API" href="/portal/reutilizacion/api/">API</a></li>
+                  <li  class = ""><a title="Formatos" href="/portal/reutilizacion/formatos/">Formatos</a></li>
+                  <li  class = ""><a title="Aplicaciones" href="/portal/reutilizacion/aplicaciones/">Aplicaciones</a></li>
+                  <li  class = ""><a title="Retos" href="/portal/reutilizacion/retos/">Retos</a></li>
+                </ul>
+                <span class=""></span></li>
+                <li  class="nav"><a title="Formación" href="/portal/formacion/">Formación</a>
+                  <ul class=" dropdown-menu">
+                    <li  class = ""><a title="¿Qué son los datos abiertos?" href="/portal/formacion/que-son-los-datos-abiertos/">¿Qué son los datos abiertos?</a></li>
+                    <li  class = ""><a title="¿Para qué sirven los datos abiertos?" href="/portal/formacion/para-que-sirven-los-datos-abiertos/">¿Para qué sirven los datos abiertos?</a></li>
+                    <li  class = ""><a title="Directrices y Normativas" href="/portal/formacion/directrices-y-normativas/">Directrices y Normativas</a></li>
+                    <li  class = ""><a title="Iniciativas Similares" href="/portal/formacion/iniciativas-similares/">Iniciativas Similares</a></li>
+                    <li  class = ""><a title="Preguntas Frecuentes" href="/portal/formacion/preguntas-frecuentes/">Preguntas Frecuentes</a></li>
+                  </ul>
+                <span class=""></span></li>
+                <li  class = "nav"><a title="Acerca de" href="/portal/acerca-de/">Acerca de</a></li>
+            </ul>
+          </ul>
+        </nav>
+      {% endblock %}
+    </div>
+  </div>
+  <header class="account-masthead">
+    <div class="logged-menu">
+      <div class="container">
+        {% block header_account_container_content %}
+          {% if c.userobj %}
+            <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+              <ul class="unstyled">
+                {% block header_account_logged %}
+                  {% if c.userobj.sysadmin %}
+                    <li>
+                      <a href="{{ h.url_for('admin.index') }}" title="{{ _('Sysadmin settings') }}">
+                        <i class="fa fa-gavel" aria-hidden="true"></i>
+                        <span class="text">{{ _('Admin') }}</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                  <li>
+                    <a href="{{ h.url_for('user.read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+                      {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+                      <span class="username">{{ c.userobj.display_name }}</span>
+                    </a>
+                  </li>
+                  {% set new_activities = h.new_activities() %}
+                  <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
+                    {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
+                    <a href="{{ h.url_for('dashboard.index') }}" title="{{ notifications_tooltip }}">
+                      <i class="fa fa-tachometer" aria-hidden="true"></i>
+                      <span class="text">{{ _('Dashboard') }}</span>
+                      <span class="badge">{{ new_activities }}</span>
+                    </a>
+                  </li>
+                  {% block header_account_settings_link %}
+                    <li>
+                      <a href="{{ h.url_for('user.edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                        <span class="text">{{ _('Settings') }}</span>
+                      </a>
+                    </li>
+                  {% endblock %}
+                  <li>
+                    <a class="btn-datasets" href="{{ h.url_for('dataset.search') }}" title="{{ _('Datasets') }}">
+                      {{ _('Datasets-home') }}
+                    </a>
+                  </li>
+                  <li>
+                      <a class="btn-datasets" href="{{ h.url_for('/showcase') }}" title="{{ _('Showcases') }}">
+                      {{ _('Showcases') }}
+                      </a>
+                  </li>
+                  {% block header_account_log_out_link %}
+                    <li>
+                      <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <span class="text">{{ _('Log out') }}</span>
+                      </a>
+                    </li>
+                  {% endblock %}
+                {% endblock %}
+              </ul>
+            </div>
+          {% else %}
+            <nav class="account not-authed">
+              <ul class="unstyled">
+                <li>
+                  <a class="btn-datasets" href="{{ h.url_for('dataset.search') }}" title="{{ _('Datasets') }}">
+                    {{ _('Datasets-home') }}
+                  </a>
+                </li>
+                <li>
+                    <a class="btn-datasets" href="{{ h.url_for('/showcase') }}" title="{{ _('Showcases') }}">
+                    {{ _('Showcases') }}
+                    </a>
+                </li>
+                <li>
+                  <a href="{{ h.url_for('/user/login') }}" title="{{ _('Log in') }}">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          {% endif %}
+        {% endblock %}
+      </div>
+    </div>
+  </header>
+</header>
+{% endblock %}
+

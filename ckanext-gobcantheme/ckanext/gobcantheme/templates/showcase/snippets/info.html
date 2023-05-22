@@ -1,0 +1,26 @@
+{% block info %}
+<div class="module context-info">
+  <section class="module-content">
+    {% block inner %}
+
+        {% block heading %}
+            <h1 class="media-heading">
+                {{ _('Datasets') }}
+            </h1>
+        {% endblock %}
+
+        {% if show_nums %}
+            {% block nums %}
+            <div class="nums">
+
+                <h2 class="media-heading">
+                    <dd>{{ h.SI_number_span(pkg.num_datasets) }}</dd>
+                </h2>
+            </div>
+            {% endblock %}
+
+        {% endif %}
+    {% endblock %}
+  </section>
+</div>
+{% endblock %}

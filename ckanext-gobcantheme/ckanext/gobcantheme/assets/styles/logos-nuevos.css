@@ -1,0 +1,226 @@
+.format-label {
+    background-position:47.23% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=html],
+.format-label[data-format*=html] {
+    background-position: 2.79% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=json],
+.format-label[data-format*=json] {
+    background-size: 4000% 160%;
+    background-position:5.55% 1%
+}
+
+.format-label[data-format=xml],
+.format-label[data-format*=xml] {
+    background-position:8.35% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=txt],
+.format-label[data-format*=txt] {
+    background-position:11.1% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=doc],
+.format-label[data-format*=doc] {
+    background-position:13.9% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=docx],
+.format-label[data-format*=docx] {
+    background-position:13.9% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=odt],
+.format-label[data-format*=odt] {
+    background-position:16.68% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=csv],
+.format-label[data-format*=csv] {
+    background-position:19.43% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=xls],
+.format-label[data-format*=xls] {
+    background-position:22.23% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=zip],
+.format-label[data-format*=zip] {
+    background-position:25% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=api],
+.format-label[data-format*=api] {
+    background-position:27.79% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=pdf],
+.format-label[data-format*=pdf] {
+    background-position:30.55% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=rdf],
+.format-label[data-format*=rdf] {
+    background-position:33.35% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=wms],
+.format-label[data-format*=wms] {
+    background-position:36.12% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=png],
+.format-label[data-format*=pgn] {
+    background-position:38.9% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=jpg],
+.format-label[data-format*=jpg] {
+    background-position:41.68% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=gif],
+.format-label[data-format*=gif] {
+    background-position:44.45% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=wfs],
+.format-label[data-format*=wfs] {
+    background-position:50% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=gml],
+.format-label[data-format*=gml] {
+    background-position:52.79% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=wmts],
+.format-label[data-format*=wmts] {
+    background-position:55.55% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=kml],
+.format-label[data-format*=kml] {
+    background-position: 58.33% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=geo],
+.format-label[data-format*=geo] {
+    background-position: 61.1% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=tiff],
+.format-label[data-format*=tiff] {
+    background-position: 63.9% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=xlsx],
+.format-label[data-format*=xlsx] {
+    background-position: 66.66% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format='7z'],
+.format-label[data-format*='7z'] {
+    background-position:69.45% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=lyr],
+.format-label[data-format*=lyr] {
+    background-position: 72.21% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=jp2],
+.format-label[data-format*=jp2] {
+    background-position:75% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=svg],
+.format-label[data-format*=svg] {
+    background-position:77.76% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=qml],
+.format-label[data-format*=qml] {
+    background-position:80.55% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=kmz],
+.format-label[data-format*=kmz] {
+    background-position:83.35% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=rss],
+.format-label[data-format*=rss] {
+    background-position:86.1% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=slite],
+.format-label[data-format*=slite] {
+    background-position:88.9% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=gpkg],
+.format-label[data-format*=gpkg] {
+    background-position:91.66% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=sipu],
+.format-label[data-format*=sipu] {
+    background-position:94.45% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=fip],
+.format-label[data-format*=fip] {
+    background-position:97.24% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format=ods],
+.format-label[data-format*=ods] {
+    background-position:100% 1%;
+    background-size: 4000% 160%;
+}
+
+.format-label[data-format='text/pc-axis'],
+.format-label[data-format*='text/pc-axis'] {
+    background-position:47.23% 1%;
+    background-size: 4000% 160%;
+}
