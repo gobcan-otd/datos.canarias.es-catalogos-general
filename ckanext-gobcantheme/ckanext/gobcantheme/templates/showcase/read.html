@@ -2,7 +2,7 @@
 
 {% set pkg = pkg_dict or c.pkg_dict %}
 {% set name = pkg.title or pkg.name %}
-{% set editor = h.get_wysiwyg_editor() %}
+{% set editor = h.showcase_get_wysiwyg_editor() %}
 
 {% set ckan_29_or_higher = h.ckan_version().split('.')[1] | int >= 9 %}
 {% set showcase_read_route = 'showcase_blueprint.read' if ckan_29_or_higher else 'showcase_read' %}
@@ -13,10 +13,9 @@
 
 {% block styles %}
   {{ super() }}
-  {% set _type = 'asset' if h.ckan_version().split('.')[1] | int >= 9 else 'resource'  %}
-  {% snippet 'showcase/snippets/showcase_css_' ~ _type ~ '.html' %}
+  {% asset "showcase/ckanext-showcase-css" %}
   {% if editor == 'ckeditor' %}
-    {% snippet 'showcase/snippets/ckeditor_content_css_' ~ _type ~ '.html' %}
+    {% asset 'showcase/ckeditor' %}
   {% endif %}
 {% endblock %}
 
@@ -72,11 +71,6 @@
             {% endblock %}
         </h1>
 
-        {% if pkg.image_display_url %}
-            <p class="ckanext-showcase-image-container"><img src="{{ pkg.image_display_url }}" alt="{{ name }}" class="media-image ckanext-showcase-image img-responsive"></p>
-            <p class="ckanext-showcase-image-autor">{{ pkg.author }}</p>
-        {% endif %}
-
     {% block package_notes %}
       {% if pkg.showcase_notes_formatted and editor == 'ckeditor' %}
         <div class="ck-content">
@@ -110,6 +104,18 @@
 
 {% block secondary_content %}
     {% block secondary_help_content %}{% endblock %}
+        {% block package_additional_info %}
+            {% snippet 'package/snippets/info.html', pkg=pkg %}
+        {% endblock %}
+
+        {% if pkg.image_display_url %}
+            {% block image_container %}
+                <div class="ckanext-showcase-image-container">
+                    <p class="ckanext-showcase-image-container"><img src="{{ pkg.image_display_url }}" alt="{{ name }}" class="media-image ckanext-showcase-image img-responsive"></p>
+                    <p class="ckanext-showcase-image-autor">{{ pkg.author }}</p>
+                <div>
+            {% endblock %}
+        {% endif %}
 
         {% block secondary_content_info %}
             {% snippet "showcase/snippets/info.html", pkg=pkg, show_nums=true %}

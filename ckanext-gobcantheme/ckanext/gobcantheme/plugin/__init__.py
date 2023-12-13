@@ -82,9 +82,17 @@ def get_readspeak_URL():
         'ckanext.gobcantheme.accessibility.readspeak.url', None)
 
 
+def get_is_pro_deploy():
+    '''Returns a boolean from the deploy environtment configured
+    '''
+    boolean = config.get('ckanext.gobcantheme.pro.deploy',
+                         False).lower() == 'true'
+    return boolean
+
+
 # Map de vistas que se quieren restringir acceso
 REDIRECT_VIEWS = (
-    #route, view, function
+    # route, view, function
     ('/user/register', 'abort_redirect', abort_redirect),
 )
 
@@ -130,4 +138,5 @@ class GobcanthemePlugin(plugins.SingletonPlugin, DefaultTranslation):
             'package_showcase_list': package_showcase_list,
             'gobcan_theme_accessibility_insuit_url': get_insuit_URL,
             'gobcan_theme_accessibility_readspeak_url': get_readspeak_URL,
+            'gobcan_theme_pro_deploy': get_is_pro_deploy,
         }

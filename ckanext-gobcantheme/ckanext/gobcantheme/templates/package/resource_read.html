@@ -97,6 +97,15 @@
             {% endblock %}
             <div class="module-content">
               {% block resource_view_content %}
+                {% block flash_preview %}
+                  <div class="flash-messages">
+                    {% block flash_inner_preview %}
+                      <div class="alert fade in alert-warning">
+                        {{ h.literal('Téngase en cuenta que en las previsualizaciones podrían no mostrarse todos los registros. Puede acceder a todo el contenido descargando el fichero.') }}
+                      </div>
+                    {% endblock %}
+                  </div>
+                {% endblock %}
                 <div class="resource-view">
                   {% set resource_preview = h.resource_preview(c.resource, c.package) %}
                   {% set views_created = res.has_views or resource_preview %}

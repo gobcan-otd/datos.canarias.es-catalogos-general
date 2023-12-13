@@ -578,8 +578,8 @@ ul {
 	padding-left: 0px;
 }
 
-.ckanext-showcase-image {
-	margin-bottom: 0px !important;
+.ckanext-showcase-image-container .ckanext-showcase-image {
+	margin-bottom: 0px;
 }
 
 .ckanext-showcase-image-autor {
@@ -589,4 +589,8 @@ ul {
 
 .masthead .logo img {
 	max-height: none;
+}
+
+div.ckanext-showcase-image-container {
+	margin: 20px;
 }

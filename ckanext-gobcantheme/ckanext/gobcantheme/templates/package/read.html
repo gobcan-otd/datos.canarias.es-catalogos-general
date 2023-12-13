@@ -33,14 +33,6 @@
     <span class="insert-comment-thread"></span>
   {% endblock %}
 
-  {% block showcase_list %}
-  {% set showcases = h.package_showcase_list(c) %}
-    {% if showcases %}
-      <h3>{{ _("Showcases-dataset")  }}</h3>
-      {% snippet "showcase/snippets/showcase_list.html", packages=showcases, pkg_id=c.pkg_dict.name %}
-    {% endif %}
-  {% endblock %}
-
   {% block package_resources %}
     {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
   {% endblock %}
@@ -51,6 +43,14 @@
 
   {% block package_additional_info %}
     {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+  {% endblock %}
+
+  {% block showcase_list %}
+    {% set showcases = h.package_showcase_list(c) %}
+    {% if showcases %}
+      <h3>{{ _("Showcases-dataset")  }}</h3>
+      {% snippet "showcase/snippets/showcase_list.html", packages=showcases, pkg_id=c.pkg_dict.name %}
+    {% endif %}
   {% endblock %}
 
 {% endblock %}

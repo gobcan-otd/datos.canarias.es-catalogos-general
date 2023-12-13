@@ -3862,7 +3862,7 @@ msgstr "Ver previsualización"
 #: ckan/templates/package/snippets/additional_info.html:2
 #: ckan/templates/snippets/additional_info.html:7
 msgid "Additional Info"
-msgstr "Información Adicional"
+msgstr "Información adicional"
 
 #: ckan/templates/package/snippets/additional_info.html:14
 #: ckan/templates/package/snippets/package_metadata_fields.html:6
